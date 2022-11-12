@@ -1,0 +1,285 @@
+// npm i -g sass
+//  sass tên file scss.scss tên file css.css --watch
+// vô ổ C xóa... => chạy lại => ctrl v ( compiled .. là oki)
+
+
+// css.reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.homepage {
+  width: 100%;
+  height: 5996px;
+  background-color: $while;
+
+  // ! Header
+  &__header {
+    @include header;
+  }
+  &__links {
+    @include links;
+    a{
+      @include Body1($while);
+    }
+  }
+  &__btnSubmit {
+    @include button;
+  }
+  &__btnRMore {
+    @include button($yellowbg);
+  }
+  &__img {
+    @include img;
+  }
+  &__imgContent{
+      padding: 128px 556px 192px 80px;
+
+    &--Bold {
+      @include Cap1($while, 550);
+      span {
+        font-weight: 900;
+      }
+    }
+
+    &--BWhile {
+      @include Display;
+    }
+
+    &--Yellow{
+      @include Body1($while);
+      span {
+        @include textYellow;
+      }
+    }
+
+    &--SWhile{
+      @include Body1($while);
+      padding-top: 16px;
+      padding-bottom: 48px;
+      }
+  }
+
+  // ! Page 1
+  &__page1 {
+    padding: 130px 78px 0px 80px;
+    // background-color: aqua;
+    display: flex;
+    gap:32px;
+  }
+  &__left{
+    width: 55%;
+    h1 {
+      @include HeadingH2;
+      margin-bottom: 32px;
+    }
+  }
+  &__contentLeft{
+     padding: 31px; 
+     border: 1px solid $Mediumgrey;
+    
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    &--Yellow {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      @include Label01; 
+      span {
+        @include textPurple;
+      }
+    }
+
+    &--HeadingH3{
+      @include HeadingH3;
+    }
+    &--Body1{
+      margin-top: 16px;
+      margin-bottom: 32px;
+      @include Body1;
+    }
+  }
+  &__right{
+    width: 45%;
+
+    h1 {
+      @include HeadingH2;
+      margin-bottom: 32px;
+    }
+  }
+  &__contentRight{
+    padding: 32px;
+    padding: 32px 116px 25px 32px;
+
+    &--By {
+      @include Label01;
+    }
+    
+    &--P{
+      margin-top: 8px;
+      @include  HeadingH4;
+    }
+  }
+
+  // ! Page 2
+  &__page2{
+    padding: 128px 80px 128px 80px;
+  }
+  &__top{
+  
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+
+    &--shapeYellow{
+      background-color: $yellowbg;
+      height:23px;
+      width: 843px ;
+     
+    }
+    &--shapePurple{
+      background-color: $purple;
+      height:23px ;
+      width:282px  ;
+    }
+
+  }
+  &__bottom{
+    background-color: $Lavender;
+    padding: 96px 108px 96px 80px;
+  }
+  &__ContentPage2{
+    display: flex;
+    gap: 82px;
+  }
+  &__BottomLeft{
+    width: 50%;
+    padding-right: 61px;
+
+    h2{
+      @include Cap1;
+      margin-bottom: 24px;
+    }
+
+    &--HeadingH2{
+      @include HeadingH2;
+    }
+
+    &--Body1{
+      @include Body1;
+      margin: 16px 0px 16px;
+    }
+
+    &--btnTransp{
+      @include button($transp,$purple);
+      padding: 16px 0px;
+    }
+  }
+  &__BottomRight{
+    width: 50%;
+
+    h2 {
+      @include Cap1;
+    }
+
+    &--Heading3{
+      @include HeadingH3;
+      margin: 24px 0px 16px;
+    }
+
+    &--Body1{
+      @include Body1();
+
+    }
+  }
+
+  // ! page 3
+  &__page3{
+    padding: 0px 80px;
+    
+    h3 {
+      @include HeadingH2;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+  }
+  &__Boxs{
+    display: flex;
+    gap: 32px;
+
+    &--bx{
+      border: 1px solid $Mediumgrey;
+      padding: 31px;
+    }
+    &--bxYellow{
+      border: 1px solid $Mediumgrey;
+      padding: 31px;
+      background-color: $yellowbg;
+    }
+    &--Icon{
+      background-color: $Lightyellow;
+      width:48px;
+      height:48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center; // cho giữa theo chiều dọc
+      justify-content: center; // cho giữa theo chiều ngang
+    }
+    &--Title{
+      @include HeadingH3;
+      margin: 16px 0px 4px;
+    }
+    &--Body1{
+      @include Body1;
+    }
+  }
+
+  // ! page 4
+}
